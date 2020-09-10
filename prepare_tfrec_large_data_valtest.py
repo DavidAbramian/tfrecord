@@ -110,7 +110,7 @@ def write_tfrecord_files(X, Y, nExamplesPerFile, fileOutRoot):
         writer = tf.io.TFRecordWriter(fileName)
 
         # Loop through all indiviual examples in the dataset
-        for volumeFile, label in zip(XFiles[exIndex:exIndex+nExamplesFile], Y[exIndex:exIndex+nExamplesFile]):
+        for volumeFile, label in zip(X[exIndex:exIndex+nExamplesFile], Y[exIndex:exIndex+nExamplesFile]):
 
             # Load volume and preprocess
             image = load_single_volume(volumeFile)
